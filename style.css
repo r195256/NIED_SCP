@@ -1,5 +1,13 @@
+body{
+    display: flex;
+    margin: auto auto auto auto;
+    flex-direction: column;
+}
+
+
 .label-campo{
     display: inline-block;
+    padding: 10px;
 }
 
 form{
