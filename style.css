@@ -13,3 +13,35 @@ body{
 form{
     display: inline;
 }
+
+.botoes-modificacao{
+    margin: 20px auto 20px;
+}
+
+.botao-navegacao{
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+}
+
+.botoes-navegacao{
+    margin: 20px auto 20px;
+}
+
+#primeiroRegistro {
+    background-image:url("Icons/first.svg");
+}
+
+#anteriorRegistro {
+    background-image:url("Icons/previous.svg");
+}
+
+#proximoRegistro {
+    background-image:url("Icons/next.svg");
+}
+
+#ultimoRegistro {
+    background-image:url("Icons/last.svg");
+}
