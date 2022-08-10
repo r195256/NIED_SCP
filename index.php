@@ -1,3 +1,13 @@
+<?php 
+
+//require 'config.php';
+require 'src/Equipamento.php';
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +20,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 <body>
-    <form class="formPatrimonio">
+    <form class="formPatrimonio" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="label-campo">
             <label>Marca: </label>
             <input type="text" name="marca" id="marca" class="input-formPatrimonio">
@@ -102,18 +112,29 @@
             <label>Patrimônio: </label>
             <input type="text" name="patrimonio" id="patrimonio" class="input-formPatrimonio">
         </div>
-    </form>
-    <div class="botoes-modificacao">
-        <button class="botao-modificador"> Adicionar </button>
-        <button class="botao-modificador"> Alterar </button>
-        <button class="botao-modificador"> Apagar </button>
+        <div class='botoes'>
+        <div class="botoes-modificacao">
+        <button class="botao-modificador" type="submit" value='add'> Adicionar </button>
+        <button class="botao-modificador" type="submit" value='change'> Alterar </button>
+        <button class="botao-modificador" type="button"> Apagar </button>
+        </div>
     </div>
+        
+    </form>
+    
+
     <div class="botoes-navegacao">
         <button class="botao-navegacao" name="primeiroRegistro" id="primeiroRegistro" ></button>
         <button class="botao-navegacao" name="anteriorRegistro" id="anteriorRegistro"></button>
         <button class="botao-navegacao" name="proximoRegistro" id="proximoRegistro"></button>
         <button class="botao-navegacao" name="ultimoRegistro" id="ultimoRegistro"></button>
     </div>
+
+    <?php  $equipamentoAtual = new Equipamento;
+    $equipamentoAtual->setMarca($_POST['marca']); 
+    echo $equipamentoAtual->getMarca();
+    
+    ?>
 
     
 

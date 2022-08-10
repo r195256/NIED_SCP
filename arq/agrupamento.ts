@@ -1,4 +1,4 @@
-Informaçoes gerais
+/* Informaçoes gerais
 -Categoria;
 -Modelo;
 -Marca;
@@ -28,3 +28,4 @@ Informações do projeto
 -Quantidade;
 -Patrimônio.
 
+ */
