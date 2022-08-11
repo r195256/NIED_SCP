@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,12 +25,27 @@
         <button type="submit" value="cancelar">Cancelar</button>
     </form>
 </body>
-<?php 
-$login = $_POST['login'];
-$senha = $_POST['password'];
-$senhaRepetida = $_POST['retypePassword'];
+</html> -->
 
-echo "$login and $senha and $senhaRepetida";
+<?php 
+
+require "src/Model/User.php";
+
+class cadastroUser
+{
+    private $cadastroUsuario;
+
+    public function __construct(){
+        $this->cadastroUsuario = new User();
+        $this->adicionar();
+    }
+
+    public function adicionar(){
+        $this->cadastroUsuario->setLogin($_POST['login']);
+        $this->cadastroUsuario->setPassword($_POST['password']);
+
+    }
+}
 ?>
 
-</html>
+
