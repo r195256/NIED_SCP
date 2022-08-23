@@ -1,7 +1,8 @@
 <?php 
 
-require 'config.php';
-require 'src/Equipamento.php';
+
+require($_SERVER["DOCUMENT_ROOT"]."/config.php");
+require($_SERVER["DOCUMENT_ROOT"].'/src/Model/Equipamento.php');
 
 
 
@@ -17,8 +18,8 @@ require 'src/Equipamento.php';
     <title>SCP - Sistema de cadastro de patrimônio </title>
 </head>
 
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
 <body>
     <form class="formPatrimonio" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="label-campo">
@@ -28,7 +29,8 @@ require 'src/Equipamento.php';
         <div class="label-campo">
             <label>Modelo: </label>
             <input type="text" name="modelo" id="modelo" class="input-formPatrimonio">
-        </div class="label-campo">
+        </div>
+        <div class="label-campo">
             <label>Categoria: </label>
             <input type="text" name="categoria" id="categoria" class="input-formPatrimonio">
         </div>
@@ -114,7 +116,7 @@ require 'src/Equipamento.php';
         </div>
         <div class='botoes'>
         <div class="botoes-modificacao">
-        <button class="botao-modificador" type="submit" value='add'> Adicionar </button>
+        <button class="botao-modificador" type="submit" formaction="teste.php" value='add'> Adicionar </button>
         <button class="botao-modificador" type="submit" value='change'> Alterar </button>
         <button class="botao-modificador" type="button"> Apagar </button>
         </div>
@@ -129,14 +131,18 @@ require 'src/Equipamento.php';
         <button class="botao-navegacao" name="proximoRegistro" id="proximoRegistro"></button>
         <button class="botao-navegacao" name="ultimoRegistro" id="ultimoRegistro"></button>
     </div>
-
-    <?php  $equipamentoAtual = new Equipamento;
-    $equipamentoAtual->setMarca($_POST['marca']); 
-    echo $equipamentoAtual->getMarca();
-    
+     <?php  
+/*     $equipamentoAtual = new Equipamento;
+    $equipamentoAtual->setMarca($_POST['marca']);
+    $equipamentoAtual->setModelo($_POST['modelo']);
+    $equipamentoAtual->setCategoria($_POST['categoria']);
+    if($equipamentoAtual->getMarca() != null){
+        echo 'Marca : '.$equipamentoAtual->getMarca().'<br>';
+        echo 'Modelo : '.$equipamentoAtual->getModelo().'<br>';
+        echo 'Categoria : '.$equipamentoAtual->getCategoria().'<br>';
+    } */
     ?>
 
-    
 
     
 </body>
