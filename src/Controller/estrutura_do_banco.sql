@@ -21,10 +21,16 @@ USE `patrimonio`;
 --
 -- Table structure for table `equipamentosPatrimonio`
 --
+DROP TABLE IF EXISTS `usuarioPatrimonio`;
+CREATE TABLE IF NOT EXISTS `usuarioPatrimonio` (
+  Id_user int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  UsuarioLogin varchar(20) UNIQUE KEY NOT NULL,
+  UsuarioSenha varchar(20) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `equipamentosPatrimonio`;
 CREATE TABLE IF NOT EXISTS `equipamentosPatrimonio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `marca` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `modelo` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `categoria` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -47,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `equipamentosPatrimonio` (
   `notaFiscal` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `data` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `quantidade` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `patrimonio` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `patrimonio` text COLLATE utf8mb4_unicode_ci NOT NULL UNIQUE,
   `titulo` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `conteudo` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
