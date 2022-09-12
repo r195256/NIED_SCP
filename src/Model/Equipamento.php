@@ -110,6 +110,7 @@ class Equipamento
 
         return $this;
     }
+    
 
  
 }
